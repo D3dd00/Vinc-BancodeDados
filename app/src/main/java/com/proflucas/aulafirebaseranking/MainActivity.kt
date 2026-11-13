@@ -38,11 +38,21 @@ class MainActivity : ComponentActivity() {
         val textoRanking = findViewById<TextView>(R.id.textoRanking)
         val botaoAumentarPontos =
             findViewById<Button>(R.id.botaoAumentarPontos)
+        val botaoDiminuirPontos =
+            findViewById<Button>(R.id.botaoDiminuirPontos)
         val botaoSalvar = findViewById<Button>(R.id.botaoSalvar)
+
 
         botaoAumentarPontos.setOnClickListener {
             pontos++
             textoPontuacao.text = "Pontuação: $pontos"
+        }
+
+        botaoDiminuirPontos.setOnClickListener {
+            if (pontos > 0) {
+                pontos--
+                textoPontuacao.text = "Pontuação: $pontos"
+            }
         }
 
         botaoSalvar.setOnClickListener {
